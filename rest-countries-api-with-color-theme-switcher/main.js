@@ -8,6 +8,7 @@ const body = document.querySelector('body');
 search.addEventListener('input',searchCountry)
 selectCountries.addEventListener('change',searchRegion)
 toggle.addEventListener('click',toggleMode)
+
 getCountries()
 
 
@@ -21,24 +22,25 @@ async function getCountries() {
 }
 
 function showCountries(countries) {
-  countries.forEach(countery => {
-    container.innerHTML += `
-    <div class="country">
+  countries.forEach(country => {
+    container.innerHTML += `<a href="#countries">
+    <div class="country" data-topLevelDomain="${country.topLevelDomain}">
+    
     <div class="flag">
-      <img src=${countery.flag} alt="" />
+      <img src=${country.flag} alt="" />
     </div>
     <div class="info">
-      <h1>${countery.name}</h1>
-      <div class="countery-info">
-        <p>Population: <span id="population">${countery.population}</span></p>
+      <h1>${country.name}</h1>
+      <div class="countrey-info">
+        <p>Population: <span id="population">${country.population}</span></p>
 
-        <p>Region: <span id="region">${countery.region}</span></p>
+        <p>Region: <span id="region">${country.region}</span></p>
 
-        <p>Capital: <span id="capital">${countery.capital}</span></p>
+        <p>Capital: <span id="capital">${country.capital}</span></p>
       </div>
     </div>
   </div>
-    
+  </a>
     `
   });
 }
@@ -82,8 +84,25 @@ function toggleMode() {
   }
 } 
 
+function countryInfo(country) {
+  console.log(country)
+ 
+}
 
+container.addEventListener("click", (e) => {
+  const country = e.path.find((item) => {
+    if (item.classList) {
+      return item.classList.contains("country");
+    } else {
+      return false;
+    }
+  });
 
+  if (country) {
+    const topLevelDomain = country.getAttribute("data-topLevelDomain");
+    console.log(topLevelDomain);
+  }
+});
 
 
 
