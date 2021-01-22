@@ -100,12 +100,66 @@ a {
 
 .btn.btn-toggle:hover {
   color: #222;
-  &::after {
+  &::after,&::before {
     top: 0;
-    color: #fff;
   }
-  &::before {
-    top: 0;
-    color: #222;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px 0;
+ 
+  .search {
+    position: relative;
+    width: 250px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+    border-radius: .25rem;
+    input {
+      border: 0;
+      font-family: inherit;
+      outline: none;
+      padding: .75rem 1rem .75rem 2.5rem;
+      font-size: 18px;
+      line-height: 1.25;
+      border-radius: .25rem;
+      width: 100%;
+      &::placeholder {
+        font-size: 16px;
+        opacity: .5;
+      }
+    }
+    label {
+      position: absolute;
+      z-index: 1;
+      top: .8rem;
+      left: .8rem;
+    }
+    i {
+      color: rgb(132.6,132.6,132.6);
+      cursor: text;
+    }
   }
+
+  .filter {
+    position: relative;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+    width: 16rem;
+    background-color: #fff;
+    select {
+      background-color: #fff;
+      width: 100%;
+      border: 0;
+      font-family: inherit;
+      outline: none;
+      padding: .65rem 2rem .65rem 1rem;
+      font-size: 18px;
+      line-height: 1.25;
+      border-radius: .25rem;
+      
+    }
+    padding-right: 10px;
+  }
+
 }
