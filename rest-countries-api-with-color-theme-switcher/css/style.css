@@ -188,7 +188,8 @@ form .filter select {
   border-top-right-radius: .25rem;
   border-top-left-radius: .25rem;
   width: 100%;
-  height: 180px;
+  object-fit: cover;
+  height: 100%;
 }
 
 .country .info {

@@ -1,28 +1,21 @@
 const container = document.getElementById('container')
+const search = document.getElementById('search')
+const selectCountries = document.getElementById('select-countries')
+// EventListeners
 
+search.addEventListener('input',searchCountry)
+selectCountries.addEventListener('change',searchRegion)
 
-
-
-getCountries()
-
-
-
-
-
-
+// getCountries()
 
 
 
 // Functions
 
-
-
-
 async function getCountries() {
   const res = await fetch('https://restcountries.eu/rest/v2/all')
   const output =  await res.json()
   showCountries(output)
-  console.log(output);
 }
 
 function showCountries(countries) {
@@ -48,6 +41,27 @@ function showCountries(countries) {
   });
 }
 
+async function searchCountry() {
+ 
+  const name = search.value;
+  if (name !== '') {
+    const res = await fetch(`https://restcountries.eu/rest/v2/name/${name}`)
+    const output =  await res.json()
+    container.innerHTML = ''
+    showCountries(output)
+  }
+}
+
+async function searchRegion() {
+ 
+  const region = selectCountries.value;
+  if (region !== 'All') {
+    const res = await fetch(`https://restcountries.eu/rest/v2/region/${region}`)
+    const output =  await res.json()
+    container.innerHTML = ''
+    showCountries(output)
+  }
+}
 
 
 
@@ -78,24 +92,3 @@ function showCountries(countries) {
 
 
 
-
-
-
-/* 
-      <div class="country">
-        <div class="flag">
-          <img src="css/flag.png" alt="" />
-        </div>
-        <div class="info">
-          <h1>Country Name</h1>
-          <div class="countery-info">
-            <p>Population: <span id="population">40,400,000</span></p>
-
-            <p>Region: <span id="region">Africa</span></p>
-
-            <p>Capital: <span id="capital">Algiers</span></p>
-          </div>
-        </div>
-      </div>
-
-*/
