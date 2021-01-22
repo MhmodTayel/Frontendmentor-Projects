@@ -9,6 +9,7 @@
   max-width: 1088px;
   margin: 0 auto;
   padding: 20px 40px;
+  position: relative;
 }
 
 .heading {
@@ -19,6 +20,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .heading .header {
@@ -40,6 +42,11 @@
   border-radius: 50px;
 }
 
+.search .input::placeholder {
+  font-size: 16px;
+  color: #b8b8b8;
+}
+
 .search .btn {
   position: absolute;
   top: 0px;
@@ -55,6 +62,54 @@
   cursor: pointer;
 }
 
+.output {
+  width: 80%;
+  background-color: #fff;
+  position: absolute;
+  top: 240px;
+  z-index: 2;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+}
+
+.output .output-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  padding: 5px;
+}
+
+.output .output-card .item {
+  padding: 10px 0 0 0;
+  text-align: center;
+}
+
+.output .output-card .item h2 {
+  font-size: .7rem;
+  color: #969696;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.output .country {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
+}
+
+.output .country img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 #mapid {
-  height: 480px;
+  z-index: 1;
+  height: 70vh;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 5px;
 }
