@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="css/favicon.png" type="image/png" sizes="16x16">
+
     <script
       src="https://kit.fontawesome.com/9a00dfd817.js"
       crossorigin="anonymous"
@@ -10,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>REST Countries API with color theme switcher</title>
   </head>
-  <body class="dark">
+  <body>
     <nav>
       <div class="nav-container">
         <h1>
@@ -21,7 +23,7 @@
         >
       </div>
     </nav>
-    <div class="form-container">
+    <div class="form-container" id="form">
       <form id="form">
         <div class="search">
           <label for="search"><i class="fas fa-search"></i></label>
@@ -32,7 +34,7 @@
             id="search"
             placeholder="Search for a countery..."
             autocomplete="off"
-            value="egypt"
+            
           />
         </div>
         <div class="filter">
@@ -50,7 +52,9 @@
 
     <div class="container" id="container">
     </div>
-    <section id="countries"></section>
+    <section id="country">
+      
+    </section>
     <script src="main.js"></script>
   </body>
 </html>
