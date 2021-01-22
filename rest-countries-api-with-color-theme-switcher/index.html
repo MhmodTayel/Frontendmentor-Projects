@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/9a00dfd817.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>REST Countries API with color theme switcher</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Where in the World</h1>
+      <a href="#" class="btn btn-toggle">Dark Mode</a>
+    </nav>
+    <form id="form">
+      <div class="search">
+        <i class="fas fa-search"></i>
+        <input
+          type="text"
+          class="search"
+          id="search"
+          placeholder="Search for a countery"
+          autocomplete="off"
+        />
+      </div>
+      <div class="filter">
+        <select id="countries">
+          <option value="all">All</option>
+          <option value="africa">Africa</option>
+          <option value="americas">Americas</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
+        </select>
+      </div>
+    </form>
+    <div class="container">
+      <div class="country">
+        <div class="flag">
+          <img src="css/flag.png" alt="">
+        </div>
+        <div class="info">
+          <h1>Country Name</h1>
+          <div class="countery-info">
+            <p>Population:</p><span id="population">40,400,000</span>
+            <p>Region:</p><span id="region">Africa</span>
+            <p>Capital:</p><span id="capital">Algiers</span>
+          </div>
+        </div>
+      </div>
+      <div class="country">
+        <div class="flag">
+          <img src="css/flag.png" alt="">
+        </div>
+        <div class="info">
+          <h1>Country Name</h1>
+          <div class="countery-info">
+            <p>Population:</p><span id="population">40,400,000</span>
+            <p>Region:</p><span id="region">Africa</span>
+            <p>Capital:</p><span id="capital">Algiers</span>
+          </div>
+        </div>
+      </div>
+      <div class="country">
+        <div class="flag">
+          <img src="css/flag.png" alt="">
+        </div>
+        <div class="info">
+          <h1>Country Name</h1>
+          <div class="countery-info">
+            <p>Population:</p><span id="population">40,400,000</span>
+            <p>Region:</p><span id="region">Africa</span>
+            <p>Capital:</p><span id="capital">Algiers</span>
+          </div>
+        </div>
+      </div>
+      <div class="country">
+        <div class="flag">
+          <img src="css/flag.png" alt="">
+        </div>
+        <div class="info">
+          <h1>Country Name</h1>
+          <div class="countery-info">
+            <p>Population:</p><span id="population">40,400,000</span>
+            <p>Region:</p><span id="region">Africa</span>
+            <p>Capital:</p><span id="capital">Algiers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
