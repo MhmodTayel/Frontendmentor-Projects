@@ -159,12 +159,12 @@ form .filter select {
 }
 
 .container {
+  width: 100%;
   max-width: 1088px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
-  margin: 40px;
 }
 
 .country {
@@ -173,6 +173,8 @@ form .filter select {
   background-color: #fff;
   cursor: pointer;
   transition: .1s ease;
+  width: 250px;
+  height: 350px;
 }
 
 .country:hover {
@@ -181,12 +183,14 @@ form .filter select {
 
 .country .flag {
   width: 100%;
+  height: 180px;
 }
 
 .country .flag img {
   border-top-right-radius: .25rem;
   border-top-left-radius: .25rem;
   width: 100%;
+  height: 180px;
 }
 
 .country .info {
@@ -212,7 +216,7 @@ form .filter select {
   font-weight: 300;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .container {
     grid-template-columns: repeat(3, 1fr);
   }
