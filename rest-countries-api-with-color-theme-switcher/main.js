@@ -2,7 +2,7 @@ const container = document.getElementById('container')
 const search = document.getElementById('search')
 const selectCountries = document.getElementById('select-countries')
 const toggle = document.getElementById('toggle')
-
+const body = document.querySelector('body');
 // EventListeners
 
 search.addEventListener('input',searchCountry)
@@ -66,7 +66,20 @@ async function searchRegion() {
 }
 
 function toggleMode() {
-  
+  body.classList.toggle('dark')
+  if (body.classList.contains('dark')) {
+    toggle.innerHTML = `
+    
+    <i class="far fa-sun" style="color:#FDB813"></i> Light Mode
+    
+    `
+  }else {
+    toggle.innerHTML = `
+    
+    <i class="far fa-moon"></i> Dark Mode
+    
+    `
+  }
 } 
 
 
