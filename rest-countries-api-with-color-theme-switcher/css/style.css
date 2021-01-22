@@ -16,9 +16,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1000px;
+  max-width: 1088px;
   margin: 0 auto;
-  padding: 0 20px;
   height: 100%;
 }
 
@@ -55,7 +54,7 @@ a {
   overflow: hidden;
   transition: .5s ease;
   z-index: 2;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .btn.btn-toggle::after {
@@ -92,10 +91,15 @@ a {
   top: 0;
 }
 
+.form-container {
+  max-width: 1088px;
+  margin: 0 auto;
+}
+
 form {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 20px 0;
   margin: 20px 0;
 }
 
@@ -152,4 +156,64 @@ form .filter select {
   font-size: 18px;
   line-height: 1.25;
   border-radius: .25rem;
+}
+
+.container {
+  max-width: 1088px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  margin: 40px;
+}
+
+.country {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-radius: .25rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: .1s ease;
+}
+
+.country:hover {
+  transform: scale(1.02);
+}
+
+.country .flag {
+  width: 100%;
+}
+
+.country .flag img {
+  border-top-right-radius: .25rem;
+  border-top-left-radius: .25rem;
+  width: 100%;
+}
+
+.country .info {
+  padding: 1.5rem;
+}
+
+.country .info h1 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  padding-bottom: 1rem;
+}
+
+.country .info p {
+  padding-bottom: .25rem;
+  font-size: .875rem;
+  font-weight: 600;
+  display: inline-block;
+  width: 100%;
+}
+
+.country .info span {
+  font-size: .875rem;
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
