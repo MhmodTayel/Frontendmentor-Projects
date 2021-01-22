@@ -1,11 +1,111 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito+Sans:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
-
+$header-bg-color : #fff;
+$body-bg-color : #fafafa;
+$border-color : #e3e3e3;
+$primary-color : #222;
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
 }
 
 body {
+  font-family: 'Nunito Sans';
+  margin: 0;
+  background-color: $body-bg-color;
+}
 
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+
+}
+
+nav {
+  height: 5rem;
+  width: 100%;
+  background-color: $header-bg-color;
+  border-bottom: 1px solid $border-color;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+.question {
+  display: inline-block;
+  font-size: 30px;
+  transform: rotate(30deg)translate(1px,2px);
+}
+
+.btn {
+    // transition: .2s  ease;
+    // &:hover {
+    //   transform: scale(1.1);
+    // }
+
+    &.btn-toggle {
+      padding: 10px 15px;
+      border-radius: 3px;
+      background-color: #222;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      transition: .5s ease;
+      z-index: 2;
+      box-shadow: 0 0 10px rgba($color: #000000, $alpha: .2);
+
+      &::after {
+        transition: .5s ease;
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color:#C2961E;
+        z-index: -10;
+      }
+
+      &::before {
+        transition: .5s ease;
+        transition-delay: .1s;
+        content: '';
+        position: absolute;
+        top: 200%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color:#fff;
+        color: #222;
+        z-index: -2;
+      }
+
+    }
+}
+
+.btn.btn-toggle:hover {
+  color: #222;
+  &::after {
+    top: 0;
+    color: #fff;
+  }
+  &::before {
+    top: 0;
+    color: #222;
+  }
 }
