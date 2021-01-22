@@ -1,12 +1,14 @@
 const container = document.getElementById('container')
 const search = document.getElementById('search')
 const selectCountries = document.getElementById('select-countries')
+const toggle = document.getElementById('toggle')
+
 // EventListeners
 
 search.addEventListener('input',searchCountry)
 selectCountries.addEventListener('change',searchRegion)
-
-// getCountries()
+toggle.addEventListener('click',toggleMode)
+getCountries()
 
 
 
@@ -63,7 +65,9 @@ async function searchRegion() {
   }
 }
 
-
+function toggleMode() {
+  
+} 
 
 
 

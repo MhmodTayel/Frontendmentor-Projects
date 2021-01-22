@@ -174,7 +174,7 @@ form .filter select {
   cursor: pointer;
   transition: .1s ease;
   width: 250px;
-  height: 350px;
+  height: 370px;
   position: relative;
   overflow: hidden;
 }
@@ -234,6 +234,44 @@ form .filter select {
 
 .country:hover::before {
   left: -170%;
+}
+
+body.dark {
+  background-color: #121212;
+}
+
+body.dark nav {
+  background-color: #222;
+  color: #fff;
+  border-bottom: #444;
+}
+
+body.dark nav a {
+  color: #fff;
+}
+
+body.dark .btn-toggle {
+  background-color: #fff;
+  color: #222;
+}
+
+body.dark .btn-toggle::before {
+  background-color: #222;
+  color: #fff;
+}
+
+body.dark .btn.btn-toggle:hover {
+  box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.5), 0 1px 2px 0 rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+body.dark .btn.btn-toggle:hover::after, body.dark .btn.btn-toggle:hover::before {
+  top: 0;
+}
+
+body.dark .filter, body.dark select, body.dark input, body.dark .country {
+  color: #fff;
+  background-color: #222;
 }
 
 @media (max-width: 768px) {
