@@ -366,7 +366,7 @@ body.dark #country {
   }
 }
 
-@media (max-width: 768px) and (max-width: 450px) {
+@media (max-width: 450px) {
   .nav-container h1 {
     font-size: 20px;
     padding-left: 10px;
@@ -390,4 +390,44 @@ body.dark #country {
   form .filter {
     margin-top: 20px;
   }
+  #country .btn-back {
+    margin-left: 20px;
+  }
+  #country .country-info {
+    flex-direction: column;
+  }
+  #country .photo {
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  #country .data {
+    margin-top: 100px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+  #country .data .name {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  #country .data .details {
+    grid-template-columns: 1fr;
+  }
+  #country .data .details p, #country .data .details span {
+    margin-bottom: 5px;
+  }
+  #country .data .tags {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+body.dark #country .photo {
+  border: 2px solid rgba(151, 151, 151, 0.876);
+}
+
+body.dark #country .tags .borders {
+  border: 1px solid rgba(151, 151, 151, 0.876);
 }
