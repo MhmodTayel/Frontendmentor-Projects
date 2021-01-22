@@ -175,10 +175,8 @@ form .filter select {
   transition: .1s ease;
   width: 250px;
   height: 350px;
-}
-
-.country:hover {
-  transform: scale(1.02);
+  position: relative;
+  overflow: hidden;
 }
 
 .country .flag {
@@ -214,6 +212,27 @@ form .filter select {
 .country .info span {
   font-size: .875rem;
   font-weight: 300;
+}
+
+.country::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 165%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.294);
+  z-index: 10;
+  transform: skewX(45deg);
+  transition: 0.8s;
+}
+
+.country:hover {
+  transform: scale(1.1);
+}
+
+.country:hover::before {
+  left: -170%;
 }
 
 @media (max-width: 768px) {
