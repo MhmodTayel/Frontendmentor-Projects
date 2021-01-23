@@ -114,3 +114,22 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   margin-top: 5px;
 }
+
+@media (max-width: 450px) {
+  .header {
+    font-size: 22px;
+  }
+  .search {
+    width: 200px;
+  }
+  .output {
+    margin-top: 30px;
+    width: 70%;
+  }
+  .output .output-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .output .output-card li:last-child {
+    margin-left: 80%;
+  }
+}
