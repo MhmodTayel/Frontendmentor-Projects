@@ -373,6 +373,8 @@ toggle-container {
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 50px;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 .output .job {
@@ -437,4 +439,22 @@ toggle-container {
   font-size: 14px;
   margin-bottom: 20px;
   max-width: 50%;
+}
+
+.load {
+  display: block;
+  background-color: #5764DF;
+  color: #fff;
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 18px;
+  margin: 50px auto;
+  width: 120px;
+  cursor: pointer;
+  transition: .1s;
+}
+
+.load:active {
+  background-color: #5765dfd5;
 }

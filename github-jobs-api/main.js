@@ -1,21 +1,26 @@
 const output = document.getElementById("output");
+const filterDescription = document.getElementById("search-job");
+const filterLocation = document.getElementById("filter-job");
+const searchBtn = document.getElementById("submit");
+const fullTimeCheck = document.getElementById("full");
+const loadBtn = document.getElementById("load");
+loadBtn.style.display = "none";
+const API = "https://jobs.github.com/positions.json";
+getJobs(API);
+async function getJobs(api) {
+  const res = await fetch(api);
 
-async function getJobs() {
-  const res = await fetch(
-    "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json"
-  );
-
-  const output = await res.json();
-  // output.setHeader("Access-Control-Allow-Origin", "*");
-  showJobs(output);
+  const data = await res.json();
+  // data.setHeader("Access-Control-Allow-Origin", "*");
+  showJobs(data);
 }
 
 function showJobs(jobs) {
-  jobs.forEach((job) => {
+  jobs.forEach((job, idx) => {
     const { created_at, type, location, title, company_logo, company } = job;
     output.innerHTML += `
    
-    <div class="job" id="job">
+    <div class="job" id="job" style="display: ${idx < 12 ? "block" : "none"}">
     <div class="logo">
       <img src="${company_logo}" alt="" />
     </div>
@@ -28,9 +33,20 @@ function showJobs(jobs) {
   </div>
    
     `;
+    if (idx < 12) {
+      loadBtn.style.display = "none";
+    } else {
+      loadBtn.style.display = "block";
+    }
+  });
+
+  loadBtn.addEventListener("click", () => {
+    document.querySelectorAll(".job").forEach((job) => {
+      job.style.display = "block";
+    });
+    loadBtn.style.display = "none";
   });
 }
-getJobs();
 
 function calculateDate(created_at) {
   var now = new Date();
@@ -54,4 +70,32 @@ function calculateDate(created_at) {
   } else {
     return `${seconds}s`;
   }
+}
+
+output.addEventListener("click", (e) => {
+  const job = e.path.find((item) => {
+    if (item.classList) {
+      return item.classList.contains("job");
+    } else {
+      return false;
+    }
+  });
+
+  if (job) {
+    console.log("job");
+  }
+});
+
+searchBtn.addEventListener("click", filterJobs);
+
+function filterJobs(e) {
+  output.innerHTML = "";
+  const description = filterDescription.value;
+  const location = filterLocation.value;
+  const fullTime = fullTimeCheck.checked;
+  console.log(description, location, fullTime);
+  getJobs(
+    `https://jobs.github.com/positions.json?description=${description}&full_time=${fullTime}&location=${location}`
+  );
+  e.preventDefault();
 }
