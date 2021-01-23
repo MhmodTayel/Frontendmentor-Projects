@@ -13,12 +13,15 @@
     <title>GitHub Jobs API</title>
   </head>
   <body>
+    <div class="navbar">
+      <h1 class="header">DevJobs</h1>
+      <div class="toggle-container">
+        <input type="checkbox" id="toggle" class="toggle" />
+        <label for="toggle" class="label">
+          <div class="ball"></div>
+        </label> </div>
+    </div>
     <div class="container">
-      <div class="navbar">
-        <h1 class="header">DevJobs</h1>
-        <input type="checkbox" id="toggle" />
-        <label for="toggle"> dark</label>
-      </div>
       <div class="input-area">
         <div class="search">
           <label for="search-job"
@@ -27,11 +30,13 @@
           <input type="text" id="search-job" />
         </div>
         <div class="filter">
-          <label for="filter-job"><i class="fa fa-map-marker" aria-hidden="true"></i></label>
+          <label for="filter-job"
+            ><i class="fa fa-map-marker" aria-hidden="true"></i
+          ></label>
           <input type="text" id="filter-job" />
         </div>
         <div class="full-time">
-          <input type="checkbox" id="full">
+          <input type="checkbox" id="full" />
           <label for="full">Full Time Only</label>
         </div>
         <button id="submit">Search</button>
