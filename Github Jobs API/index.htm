@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/9a00dfd817.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <title>GitHub Jobs API</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <h1 class="header">DevJobs</h1>
+        <input type="checkbox" id="toggle" />
+        <label for="toggle"> dark</label>
+      </div>
+      <div class="input-area">
+        <div class="search">
+          <label for="search-job"
+            ><i class="fa fa-search" aria-hidden="true"></i
+          ></label>
+          <input type="text" id="search-job" />
+        </div>
+        <div class="filter">
+          <label for="filter-job"><i class="fa fa-map-marker" aria-hidden="true"></i></label>
+          <input type="text" id="filter-job" />
+        </div>
+        <div class="full-time">
+          <input type="checkbox" id="full">
+          <label for="full">Full Time Only</label>
+        </div>
+        <button id="submit">Search</button>
+      </div>
+    </div>
+
+    <script src="script/main.js"></script>
+  </body>
+</html>
