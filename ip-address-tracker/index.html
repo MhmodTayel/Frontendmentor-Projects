@@ -23,42 +23,17 @@
       <h1 class="header">IP Address Tracker
       </h1>
       <form class="search">
-        <input id="input" class="input" type="text" minlength="7" maxlength="15" size="15" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" placeholder="Search for any IP address or domain">
-        <button type="submit" class="btn">  <i class="fas fa-chevron-right"></i> </button>
+        <input id="input" class="input" type="text" minlength="7" maxlength="15" size="15" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" placeholder="Search for any IP address or domain" value="156.219.241.4">
+        <button type="submit" class="btn" id="search-btn">  <i class="fas fa-chevron-right"></i> </button>
       </form>
     </div>
-    <div class="output">
-      <ul class="output-card">
-        <li class="item">
-          <h2>IP ADDRESS
-          </h2>
-          <p>156.219.241.4
-
-          </p>
-        </li>
-        <li class="item">
-          <h2>LOCATION</h2>
-          <p>Talā</p>
-        </li>
-        <li class="item">
-          <h2>TIMEZONE</h2>
-          <p>UTC+02:00
-
-          </p>
-        </li>
-        <li class="item">
-          <h2>Provider</h2>
-          <p>Telecom Egypt</p>
-        </li>
-        <li class="item">
-          <h2>Country</h2>
-          <div class="country">
-            <img src="./images/favicon-32x32.png" alt="">
-          </div>
-        </li>
-      </ul>
+    <div class="output" id="output">
+      
     </div>
-    <div id="mapid"></div>
+    <div id="map">
+      <div id="mapid"></div>
+    </div>
+   
 
   </div>
   <script src="main.js"></script>
