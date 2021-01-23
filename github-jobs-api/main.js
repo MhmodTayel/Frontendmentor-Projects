@@ -5,13 +5,16 @@ const searchBtn = document.getElementById("submit");
 const fullTimeCheck = document.getElementById("full");
 const loadBtn = document.getElementById("load");
 loadBtn.style.display = "none";
+const animated_bgs = document.querySelectorAll(".animated-bg");
+const animated_bg_texts = document.querySelectorAll(".animated-bg-text");
+const toggle = document.getElementById("toggle");
 const API = "https://jobs.github.com/positions.json";
 getJobs(API);
 async function getJobs(api) {
   const res = await fetch(api);
-
   const data = await res.json();
   // data.setHeader("Access-Control-Allow-Origin", "*");
+  output.innerHTML = "";
   showJobs(data);
 }
 
@@ -21,18 +24,32 @@ function showJobs(jobs) {
     output.innerHTML += `
    
     <div class="job" id="job" style="display: ${idx < 12 ? "block" : "none"}">
-    <div class="logo">
+    <div class="logo" >
       <img src="${company_logo}" alt="" />
     </div>
     <p class="job-details">${calculateDate(
       created_at
-    )} ago <span class="big">.</span> ${type}</p>
-    <p class="job-title">${title}</p>
-    <p class="job-company">${company}</p>
-    <p class="job-locations">${location}</p>
+    )} ago <span class="big">.</span> ${type}
+    
+    </p>
+    <p class="job-title">${title}
+    
+    </p>
+    <p class="job-company">${company}
+    
+    </p>
+    <p class="job-locations">${location}
+    
+    </p>
   </div>
    
     `;
+    animated_bgs.forEach((bg) => {
+      bg.classList.remove("animated-bg");
+    });
+    animated_bg_texts.forEach((bg) => {
+      bg.classList.remove("animated-bg-text");
+    });
     if (idx < 12) {
       loadBtn.style.display = "none";
     } else {
@@ -88,8 +105,218 @@ output.addEventListener("click", (e) => {
 
 searchBtn.addEventListener("click", filterJobs);
 
+const template = `
+<div class="job" id="job">
+<div class="logo animated-bg" >
+  <img src="" alt="" />
+</div>
+<p class="job-details">
+
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-title">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-company">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-locations">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+</div>
+<div class="job" id="job">
+<div class="logo animated-bg" >
+  <img src="" alt="" />
+</div>
+<p class="job-details">
+
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-title">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-company">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-locations">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+</div>       <div class="job" id="job">
+<div class="logo animated-bg" >
+  <img src="" alt="" />
+</div>
+<p class="job-details">
+
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-title">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-company">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-locations">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+</div>       <div class="job" id="job">
+<div class="logo animated-bg" >
+  <img src="" alt="" />
+</div>
+<p class="job-details">
+
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-title">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-company">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-locations">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+</div>       <div class="job" id="job">
+<div class="logo animated-bg" >
+  <img src="" alt="" />
+</div>
+<p class="job-details">
+
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-title">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-company">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-locations">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+</div>       <div class="job" id="job">
+<div class="logo animated-bg" >
+  <img src="" alt="" />
+</div>
+<p class="job-details">
+
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-title">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-company">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-locations">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+</div>       <div class="job" id="job">
+<div class="logo animated-bg" >
+  <img src="" alt="" />
+</div>
+<p class="job-details">
+
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-title">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-company">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-locations">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+</div>       <div class="job" id="job">
+<div class="logo animated-bg" >
+  <img src="" alt="" />
+</div>
+<p class="job-details">
+
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-title">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-company">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-locations">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+</div>       <div class="job" id="job">
+<div class="logo animated-bg" >
+  <img src="" alt="" />
+</div>
+<p class="job-details">
+
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-title">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-company">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-locations">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+</div>       <div class="job" id="job">
+<div class="logo animated-bg" >
+  <img src="" alt="" />
+</div>
+<p class="job-details">
+
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-title">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-company">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-locations">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+</div>       <div class="job" id="job">
+<div class="logo animated-bg" >
+  <img src="" alt="" />
+</div>
+<p class="job-details">
+
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-title">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-company">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-locations">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+</div>       <div class="job" id="job">
+<div class="logo animated-bg" >
+  <img src="" alt="" />
+</div>
+<p class="job-details">
+
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-title">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-company">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+<p class="job-locations">
+<span class="animated-bg animated-bg-text">&nbsp;</span>
+</p>
+</div>
+`;
 function filterJobs(e) {
-  output.innerHTML = "";
+  console.log(template);
+  output.innerHTML = template;
+
   const description = filterDescription.value;
   const location = filterLocation.value;
   const fullTime = fullTimeCheck.checked;
@@ -99,3 +326,7 @@ function filterJobs(e) {
   );
   e.preventDefault();
 }
+
+toggle.addEventListener("click", () => {
+  document.querySelector("body").classList.toggle("dark");
+});

@@ -7,7 +7,7 @@
   font-family: 'Lato';
 }
 body {
-
+  transition: .2s;
   background-color: #F5F6F8;
 
 }
@@ -25,6 +25,7 @@ a {
   border-radius:0 0 10px 10px;
   position: relative;
   padding: 0 30px;
+  transition: .2s;
 }
 .big {
   font-size: 30px;
@@ -44,6 +45,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding-right: 50px;
+  transition: .2s;
   .header {
     color: #fff;
     padding: 60px;
@@ -145,6 +147,7 @@ toggle-container {
 }
 
 .input-area {
+  transition: .2s;
   position: absolute;
   width: 1000px;
   background-color: #fff;
@@ -175,6 +178,7 @@ toggle-container {
     opacity: .8;
   }
   #filter-job,#search-job {
+    transition: .2s;
     width: 100%;
     height: 100%;
     padding: 5px 5px 5px 30px;
@@ -328,7 +332,7 @@ toggle-container {
 }
 
 .full-time {
-
+  transition: .2s;
   #full {
     top: 22px;
     left: 5px;
@@ -363,7 +367,7 @@ toggle-container {
 }
 
 .output {
-  
+  transition: .2s;
   padding-top: 100px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -373,6 +377,7 @@ toggle-container {
   padding-bottom: 20px;
 
   .job {
+    
     cursor: pointer;
     transition: .1s;
     &:hover {
@@ -455,4 +460,69 @@ toggle-container {
     background-color: #5765dfd5;
   }
 
+}
+
+.animated-bg {
+  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 10%, #f6f7f8 20%, #f6f7f8 100%);
+  background-size: 200% 100%;
+  animation: bgPos 1s linear infinite;
+}
+
+.animated-bg-text {
+  border-radius: 50px;
+  display: inline-block;
+  margin: 0;
+  height: 10px;
+  width: 100%;
+}
+
+@keyframes bgPos {
+  0% {
+    background-position: 50% 0;
+  }
+  100% {
+    background-position: -150% 0;
+  }
+}
+
+$primary-color: #131722;
+$secondry-color: #18202D;
+body.dark {
+  background-color:$primary-color;
+  .container {
+    background-color:$primary-color;
+  }
+
+  .input-area {
+    background-color: $secondry-color;
+    border-color: $primary-color;
+    #filter-job,#search-job {
+      background-color: $secondry-color;
+      border-color: $primary-color;
+
+    }
+  }
+  .output {
+    .job {
+      background-color: $secondry-color;
+      color: #fff;
+
+    }
+  }
+  .full-time {
+    label {
+      color: #fff;
+    }
+  }
+  @supports(-webkit-appearance: none) or (-moz-appearance: none) {
+    input[type='checkbox']{
+      --border: $primary-color;
+      --background: rgba(39, 94, 254, .3);
+}}
+
+.animated-bg {
+  background-image: linear-gradient(to right, #b1b2b3 0%, #9b9b9b 10%, #949595 20%, #9d9ea0 100%);
+  background-size: 200% 100%;
+  animation: bgPos 1s linear infinite;
+}
 }
