@@ -10,7 +10,13 @@ body {
   background-color: #F5F6F8;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
+  background: url(../assets/desktop/bg-pattern-bottom.svg) bottom -600px right -150px no-repeat, url(../assets/desktop/bg-pattern-top.svg) top -500px left -200px no-repeat;
+  background-attachment: fixed;
   max-width: 1200px;
   background-color: #F5F6F8;
   margin: 0 auto;
@@ -73,7 +79,7 @@ toggle-container {
 
 .toggle-container .label::before {
   position: absolute;
-  transform: translate(-40px, 1px);
+  transform: translate(-40px, 7px);
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f185";
@@ -84,7 +90,7 @@ toggle-container {
 
 .toggle-container .label::after {
   position: absolute;
-  transform: translate(76px, 2px);
+  transform: translate(76px, 5px);
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f186";
@@ -370,6 +376,8 @@ toggle-container {
 }
 
 .output .job {
+  cursor: pointer;
+  transition: .1s;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 10px;
@@ -378,6 +386,11 @@ toggle-container {
   padding: 10px 30px;
   position: relative;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.output .job:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .output .job .logo {

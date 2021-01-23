@@ -11,7 +11,7 @@ function showJobs(jobs) {
     const { created_at, type, location, title, company_logo, company } = job;
     console.log(type);
     output.innerHTML += `
-    
+   
     <div class="job" id="job">
     <div class="logo">
       <img src="${company_logo}" alt="" />
@@ -23,7 +23,7 @@ function showJobs(jobs) {
     <p class="job-company">${company}</p>
     <p class="job-locations">${location}</p>
   </div>
-    
+   
     `;
   });
 }

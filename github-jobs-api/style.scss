@@ -7,9 +7,17 @@
   font-family: 'Lato';
 }
 body {
+
   background-color: #F5F6F8;
+
+}
+a {
+  text-decoration: none;
+
 }
 .container {
+  background: url(../assets/desktop/bg-pattern-bottom.svg) bottom -600px right -150px no-repeat, url(../assets/desktop/bg-pattern-top.svg) top -500px left -200px no-repeat;
+  background-attachment: fixed;
   max-width: 1200px;
   background-color: #F5F6F8;
   // box-shadow: 0 0 10px 0 rgba($color: #000000, $alpha: .2);
@@ -70,7 +78,7 @@ toggle-container {
   position: relative;
   &::before {
     position: absolute;
-    transform: translate(-40px,1px);
+    transform: translate(-40px,7px);
     font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f185";
     color: #FDB813;
     font-size: 25px;
@@ -78,7 +86,7 @@ toggle-container {
   }
   &::after {
     position: absolute;
-    transform: translate(76px,2px);
+    transform: translate(76px,5px);
     font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f186";
     color: #fff;
     font-size: 23px;
@@ -355,14 +363,22 @@ toggle-container {
 }
 
 .output {
+  
   padding-top: 100px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 50px;
+  
 
 
   .job {
+    cursor: pointer;
+    transition: .1s;
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 20px 0 rgba($color: #000000, $alpha: .2);
+    }
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
@@ -421,4 +437,4 @@ toggle-container {
       max-width: 50%;
     }
   }
-}
+} 
