@@ -1,15 +1,18 @@
 const output = document.getElementById("output");
 
 async function getJobs() {
-  const res = await fetch("https://jobs.github.com/positions.json");
+  const res = await fetch(
+    "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json"
+  );
+
   const output = await res.json();
+  // output.setHeader("Access-Control-Allow-Origin", "*");
   showJobs(output);
 }
 
 function showJobs(jobs) {
   jobs.forEach((job) => {
     const { created_at, type, location, title, company_logo, company } = job;
-    console.log(type);
     output.innerHTML += `
    
     <div class="job" id="job">
