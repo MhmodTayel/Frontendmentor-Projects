@@ -4,6 +4,16 @@ const searchBtn = document.getElementById("search-btn");
 const output = document.getElementById("output");
 const mapEl = document.getElementById("map");
 
+initMap()
+
+async function initMap() {
+  const res = await fetch('https://api.ipify.org?format=json')
+  const output = await res.json();
+  getGEO(output.ip)
+  input.value = output.ip
+}
+
+
 searchBtn.addEventListener("click", searchIP);
 
 function searchIP(e) {
@@ -25,7 +35,7 @@ async function getGEO(IP) {
   const country = output.location.country;
   const lat = output.location.lat;
   const lng = output.location.lng;
-
+  
   showOutput(ip, region, timezone, provider, country);
   showMap(lat, lng, ip);
 }
@@ -78,7 +88,7 @@ function showOutput(ip, region, timezone, provider, country) {
           <h2>Country</h2>
           <div class="country">
 
-            <img src="./images/favicon-32x32.png" alt="">
+            <img src="https://flagcdn.com/w640/${country.toLowerCase()}.png" alt="">
           </div>
         </li>
       </ul>

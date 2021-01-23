@@ -93,10 +93,10 @@
 }
 
 .output .country {
-  width: 30px;
-  height: 30px;
-  margin: 0 auto;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  margin: 0 auto;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   margin-bottom: 5px;
 }
@@ -105,6 +105,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
 }
 
 #mapid {
