@@ -528,11 +528,12 @@ body.dark {
 }
 
 section {
+  
  position: relative;
  width: 1000px;
  margin: 0 auto;
   .single-heading {
-   
+    transition: .2s;
     position: absolute;
     display: grid;
     grid-template-columns: 2fr 3fr 2fr;
@@ -557,7 +558,7 @@ section {
 
     .details {
       padding: 20px;
-
+      transition: .2s;
       h2 {
         color: #333;
       }
@@ -591,6 +592,7 @@ section {
   }
 
   .single-output {
+    transition: .2s;
     background: url(../assets/desktop/bg-pattern-bottom.svg) bottom -600px right -150px no-repeat, url(../assets/desktop/bg-pattern-top.svg) top -500px left -200px no-repeat;
   background-attachment: fixed;
   max-width: 1200px;
@@ -603,6 +605,7 @@ section {
   transition: .2s;
 
   .output-header {
+    transition: .2s;
     display: grid;
     grid-template-columns: 3fr 1fr;
     height: 100px;
@@ -617,6 +620,7 @@ section {
       }
   
       .job-title {
+        
         margin: 10px 0;
         font-size: 20px;
         font-family: inherit;
@@ -647,6 +651,7 @@ section {
 }
 
 .description {
+  transition: .2s;
   padding: 40px;
   margin-top: 20px;
   line-height: 1.5;
@@ -705,6 +710,29 @@ section {
 
 body.dark {
   .single-heading {
-    background-color: ;
+    background-color: $secondry-color;
+    color: #fff;
+    .details {
+      h2 {
+        color: #fff;
+      }
+    }
+    .site {
+      a {
+        background-color: #5764DF;
+        color: #fff;
+      }
+    }
+  }
+
+  .single-output {
+    background-color: $secondry-color;
+    color: #fff;
+
+    .description {
+      background-color: $secondry-color;
+      color: #fff;
+
+    }
   }
 }

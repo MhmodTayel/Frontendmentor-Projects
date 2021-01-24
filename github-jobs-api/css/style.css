@@ -539,6 +539,7 @@ section {
 }
 
 section .single-heading {
+  transition: .2s;
   position: absolute;
   display: grid;
   grid-template-columns: 2fr 3fr 2fr;
@@ -565,6 +566,7 @@ section .single-heading .logo img {
 
 section .single-heading .details {
   padding: 20px;
+  transition: .2s;
 }
 
 section .single-heading .details h2 {
@@ -599,6 +601,7 @@ section .single-heading .site .apply:active {
 }
 
 section .single-output {
+  transition: .2s;
   background: url(../assets/desktop/bg-pattern-bottom.svg) bottom -600px right -150px no-repeat, url(../assets/desktop/bg-pattern-top.svg) top -500px left -200px no-repeat;
   background-attachment: fixed;
   max-width: 1200px;
@@ -611,6 +614,7 @@ section .single-output {
 }
 
 section .single-output .output-header {
+  transition: .2s;
   display: grid;
   grid-template-columns: 3fr 1fr;
   height: 100px;
@@ -649,6 +653,7 @@ section .single-output .output-header .apply {
 }
 
 .description {
+  transition: .2s;
   padding: 40px;
   margin-top: 20px;
   line-height: 1.5;
@@ -706,4 +711,28 @@ section .single-output .output-header .apply {
   color: #fff;
   border-radius: 5px;
   margin-top: 50px;
+}
+
+body.dark .single-heading {
+  background-color: #18202D;
+  color: #fff;
+}
+
+body.dark .single-heading .details h2 {
+  color: #fff;
+}
+
+body.dark .single-heading .site a {
+  background-color: #5764DF;
+  color: #fff;
+}
+
+body.dark .single-output {
+  background-color: #18202D;
+  color: #fff;
+}
+
+body.dark .single-output .description {
+  background-color: #18202D;
+  color: #fff;
 }
