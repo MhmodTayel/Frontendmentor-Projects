@@ -137,7 +137,7 @@ function showJobDetails(output) {
   } = output;
 
   singleJob.innerHTML = `
-  
+  <a href="#" id="reload">Back</a>
   <div class="single-heading">
         <div class="logo">
           <img src="${company_logo}" alt="" />
@@ -187,6 +187,10 @@ function showJobDetails(output) {
         text.classList.add("text-header");
       }
     });
+  const reload = document.getElementById("reload");
+  reload.addEventListener("click", () => {
+    window.location.reload();
+  });
 }
 
 searchBtn.addEventListener("click", filterJobs);
