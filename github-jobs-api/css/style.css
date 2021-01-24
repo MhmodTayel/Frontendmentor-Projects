@@ -531,3 +531,144 @@ body.dark .animated-bg {
   background-size: 200% 100%;
   animation: bgPos 1s linear infinite;
 }
+
+section {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+section .single-heading {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  background-color: #fff;
+  width: 600px;
+  top: -140px;
+  left: 200px;
+  height: 120px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+section .single-heading .logo {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+}
+
+section .single-heading .logo img {
+  max-height: 120px;
+  width: auto;
+  height: auto;
+}
+
+section .single-heading .details {
+  padding: 20px;
+}
+
+section .single-heading .details h2 {
+  color: #333;
+}
+
+section .single-heading .details p {
+  margin-top: 8px;
+  color: #a0a0a7;
+}
+
+section .single-heading .site {
+  padding: 25px 15px 0 0;
+}
+
+section .single-heading .site .apply {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  background-color: #EFEFFB;
+  color: #5964E0;
+  padding: 15px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  text-align: center;
+  transition: .1s;
+}
+
+section .single-heading .site .apply:active {
+  background-color: #efeffbca;
+}
+
+section .single-output {
+  background: url(../assets/desktop/bg-pattern-bottom.svg) bottom -600px right -150px no-repeat, url(../assets/desktop/bg-pattern-top.svg) top -500px left -200px no-repeat;
+  background-attachment: fixed;
+  max-width: 1200px;
+  background-color: #F5F6F8;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  margin: 90px auto;
+  border-radius: 0 0 10px 10px;
+  padding: 50px 30px;
+  transition: .2s;
+}
+
+section .single-output .output-header {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  height: 100px;
+}
+
+section .single-output .output-header .job-data .job-details {
+  color: #7d7e80;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+section .single-output .output-header .job-data .job-title {
+  margin: 10px 0;
+  font-size: 20px;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+section .single-output .output-header .job-data .job-locations {
+  color: #6263B4;
+  font-size: 14px;
+  margin-bottom: 20px;
+  max-width: 50%;
+}
+
+section .single-output .output-header .apply {
+  background-color: #5764DF;
+  padding: 15px;
+  width: 120px;
+  font-size: 18px;
+  color: #fff;
+  height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  margin: auto;
+}
+
+.description {
+  padding: 40px;
+  margin-top: 20px;
+  line-height: 1.5;
+  background-color: #fff;
+  border-radius: 5px;
+  color: #474a4e;
+  padding-left: 60px;
+}
+
+.description p.text-header {
+  margin-bottom: 10px;
+  margin-top: 30px;
+  color: #222;
+  font-weight: 600;
+}
+
+.description li {
+  padding-left: 20px;
+}
+
+.description li:last-child {
+  margin-bottom: 30px;
+}

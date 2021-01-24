@@ -8,6 +8,8 @@ loadBtn.style.display = "none";
 const animated_bgs = document.querySelectorAll(".animated-bg");
 const animated_bg_texts = document.querySelectorAll(".animated-bg-text");
 const toggle = document.getElementById("toggle");
+const container = document.querySelector(".container");
+const singleJob = document.getElementById("single-job");
 const API = "https://jobs.github.com/positions.json";
 getJobs(API);
 async function getJobs(api) {
@@ -20,10 +22,19 @@ async function getJobs(api) {
 
 function showJobs(jobs) {
   jobs.forEach((job, idx) => {
-    const { created_at, type, location, title, company_logo, company } = job;
+    const {
+      created_at,
+      type,
+      location,
+      title,
+      company_logo,
+      company,
+      id,
+    } = job;
     output.innerHTML += `
    
-    <div class="job" id="job" style="display: ${idx < 12 ? "block" : "none"}">
+    <div class="job" id="job" style="display: ${idx < 12 ? "block" : "none"}"
+    data-id="${id}">
     <div class="logo" >
       <img src="${company_logo}" alt="" />
     </div>
@@ -99,9 +110,84 @@ output.addEventListener("click", (e) => {
   });
 
   if (job) {
-    console.log("job");
+    let jobId = job.getAttribute("data-id");
+    getJobDetails(jobId);
   }
 });
+
+async function getJobDetails(jobId) {
+  container.innerHTML = "";
+  const res = await fetch(`https://jobs.github.com/positions/${jobId}.json`);
+  const output = await res.json();
+  showJobDetails(output);
+}
+
+function showJobDetails(output) {
+  const {
+    type,
+    url,
+    created_at,
+    company,
+    company_url,
+    location,
+    title,
+    description,
+    how_to_apply,
+    company_logo,
+  } = output;
+
+  singleJob.innerHTML = `
+  
+  <div class="single-heading">
+        <div class="logo">
+          <img src="${company_logo}" alt="" />
+        </div>
+        <div class="details">
+          <h2>${company}</h2>
+          <p>${location}</p>
+        </div>
+        <div class="site">
+          <a href="${company_url}" class="apply" target="_blank">Company Site</a>
+        </div>
+      </div>
+      <div class="single-output">
+        <div class="output-header">
+
+          <div class="job-data">
+            
+            
+              <p class="job-details">${calculateDate(
+                created_at
+              )} ago <span class="big">.</span> ${type}
+    
+    </p>
+            
+            <p class="job-title">
+            ${title}
+              
+            </p>
+            <p class="job-locations">
+            ${location}
+              
+            </p>
+          </div>
+          <a class="apply" href="${url}" target="_blank">Apply Now</a>
+        </div>
+        <div class="description">${description}</div>
+        <div class="how-to-apply">${how_to_apply}</div>
+      </div>
+
+  `;
+
+  document
+    .querySelector(".description")
+    .querySelectorAll("p")
+    .forEach((text) => {
+      if (text.innerText.length < 40) {
+        text.classList.add("text-header");
+      }
+    });
+}
 
 searchBtn.addEventListener("click", filterJobs);
 
