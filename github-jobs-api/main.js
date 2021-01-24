@@ -420,3 +420,6 @@ function filterJobs(e) {
 toggle.addEventListener("click", () => {
   document.querySelector("body").classList.toggle("dark");
 });
+
+// Load More than 50
+
