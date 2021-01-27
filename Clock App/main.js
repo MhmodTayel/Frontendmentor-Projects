@@ -27,4 +27,14 @@ function refreshQuote() {
 function toggle() {
   quote.classList.toggle("hide");
   extraData.classList.toggle("active");
+
+  if (quote.classList.contains("hide")) {
+    moreBtn.innerHTML =
+      'Less  <img src="./assets/desktop/icon-arrow-up.svg" alt="" />';
+    moreBtn.classList.add("down");
+  } else {
+    moreBtn.innerHTML =
+      'More  <img src="./assets/desktop/icon-arrow-up.svg" alt="" />';
+    moreBtn.classList.remove("down");
+  }
 }
