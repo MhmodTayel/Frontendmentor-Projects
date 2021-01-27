@@ -297,3 +297,89 @@ body {
     transform: scale(1);
   }
 }
+
+@media (max-width: 450px) {
+  .quote {
+    margin: 20px 0 80px 20px;
+  }
+  .quote blockquote {
+    font-size: 16px;
+    max-width: 300px;
+  }
+  .quote blockquote footer {
+    font-size: 12px;
+  }
+  .quote .refresh {
+    width: 20px;
+    height: 20px;
+    margin-top: 20px;
+  }
+  .data {
+    margin-top: 0px;
+    width: 400px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  .data .display {
+    margin-left: 20px;
+  }
+  .data .display .times-of-day {
+    width: 80%;
+  }
+  .data .display .times-of-day img {
+    width: 20px;
+    height: 20px;
+  }
+  .data .display .times-of-day p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .data .display .time p {
+    display: flex;
+    align-items: center;
+    font-size: 100px;
+    letter-spacing: 5px;
+  }
+  .data .display .time p .abbreviation {
+    font-size: 20px;
+    margin: 0;
+    margin-top: 50px;
+  }
+  .data .display .location {
+    font-size: 14px;
+    margin-top: -40px;
+    margin-left: 20px;
+  }
+  .data .btn {
+    margin-top: 20px;
+    font-size: 12px;
+    width: 80px;
+    padding: 0 9px 0 10px;
+    letter-spacing: 1px;
+    height: 40px;
+  }
+  .data .btn img {
+    width: 20px;
+    height: 20px;
+  }
+  .extra-data {
+    padding: 2rem 0.5rem 0 0.5rem;
+    grid-row-gap: 10px;
+    text-align: center;
+    width: 0;
+    align-items: center;
+  }
+  .extra-data.active {
+    height: 250px;
+    width: 100%;
+  }
+  .extra-data p {
+    font-size: 12px;
+    line-height: 10px;
+  }
+  .extra-data h2 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
