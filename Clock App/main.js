@@ -37,7 +37,7 @@ function getTime() {
 }
 let locationData = {};
 async function getLocation() {
-  const res = await fetch("https://freegeoip.app/json/");
+  const res = await fetch("http://freegeoip.app/json/");
   const output = await res.json();
   locationData = output;
 }
