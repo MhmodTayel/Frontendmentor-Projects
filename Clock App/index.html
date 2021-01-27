@@ -12,25 +12,35 @@
   </head>
   <body>
     <div class="container">
-      <div class="quote">
+      <div class="quote" id="quote">
         <blockquote>
           &ldquo;The sun shines upon good and bad alike.&rdquo; &mdash;
           <footer>Hans Christian Andersen</footer>
         </blockquote>
-        <div class="reload"><img src="assets/desktop/icon-refresh.svg" alt=""></div>
+        <div class="refresh" id="refresh">
+          <img src="assets/desktop/icon-refresh.svg" alt="" />
+        </div>
       </div>
-
 
       <div class="data">
-        <div class="times-of-day">
-          <img src="assets/desktop/icon-sun.svg" alt="" />
-          <p><span id="am-pm"> Good Evening, </span>IT’S CURRENTLY</p>
-          <p class="time-output">4:33 <span class="abbreviation">EET</span></p>
+        <div class="display">
+          <div class="times-of-day">
+            <img src="assets/desktop/icon-sun.svg" alt="" />
+            <p><span id="am-pm"> Good Evening, </span>IT’S CURRENTLY</p>
+          </div>
+          <div class="time">
+            <p class="time-output">
+              4:33 <span class="abbreviation">EET</span>
+            </p>
+          </div>
           <p class="location">IN CAIRO GOVERNORATE, EGYPT</p>
         </div>
-        <button class="btn" id="more">More</button>
+
+        <button class="btn" id="more">
+          More <img src="./assets/desktop/icon-arrow-up.svg" alt="" />
+        </button>
       </div>
-      <div class="extra-data">
+      <div class="extra-data" id="extra-data">
         <div class="timezone">
           <p>CURRENT TIMEZONE</p>
           <h2>Africa/Cairo</h2>
