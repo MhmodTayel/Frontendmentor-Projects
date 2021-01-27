@@ -1,6 +1,9 @@
-async function getData() {
-  const res = await fetch("http://worldtimeapi.org/api/ip");
+async function getQuote() {
+  const res = await fetch("https://zenquotes.io/api/random");
   const output = await res.json();
-  console.log(output);
 }
-getData();
+
+async function getData() {
+  const res = await fetch("https://zenquotes.io/api/random");
+  const output = await res.json();
+}
