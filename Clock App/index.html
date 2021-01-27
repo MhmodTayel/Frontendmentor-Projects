@@ -11,54 +11,38 @@
     <title>Clock App</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="container">
       <div class="quote" id="quote">
-        <blockquote>
-          &ldquo;The sun shines upon good and bad alike.&rdquo; &mdash;
-          <footer>Hans Christian Andersen</footer>
-        </blockquote>
+        <blockquote id="blockquote"></blockquote>
         <div class="refresh" id="refresh">
           <img src="assets/desktop/icon-refresh.svg" alt="" />
         </div>
       </div>
 
       <div class="data">
-        <div class="display">
-          <div class="times-of-day">
-            <img src="assets/desktop/icon-sun.svg" alt="" />
-            <p><span id="am-pm"> Good Evening, </span>IT’S CURRENTLY</p>
-          </div>
-          <div class="time">
-            <p class="time-output">
-              4:33 <span class="abbreviation">EET</span>
-            </p>
-          </div>
-          <p class="location">IN CAIRO GOVERNORATE, EGYPT</p>
-        </div>
+        <div class="display" id="display"></div>
 
         <button class="btn" id="more">
           More <img src="./assets/desktop/icon-arrow-up.svg" alt="" />
         </button>
       </div>
-      <div class="extra-data" id="extra-data">
-        <div class="timezone">
-          <p>CURRENT TIMEZONE</p>
-          <h2>Africa/Cairo</h2>
-        </div>
-        <div class="day-year">
-          <p>DAY OF THE YEAR</p>
-          <h2>27</h2>
-        </div>
-        <div class="day-week">
-          <p>DAY OF THE WEEK</p>
-          <h2>3</h2>
-        </div>
-        <div class="week-number">
-          <p>WEEK NUMBER</p>
-          <h2>4</h2>
-        </div>
+      <div class="extra-data" id="extra-data"></div>
+    </div>
+    <div class="extra-data" id="extra-data"></div>
+    <div class="loader-container">
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
+
     <script src="main.js"></script>
   </body>
 </html>

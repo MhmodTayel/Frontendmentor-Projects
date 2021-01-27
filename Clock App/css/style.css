@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: "Inter";
@@ -8,10 +7,12 @@
 
 body {
   overflow: hidden;
+  position: relative;
 }
 
 .container {
   width: 100%;
+  height: 100vh;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.342), rgba(0, 0, 0, 0.548)), url("../assets/desktop/bg-day.jpg") no-repeat center center/cover;
   display: flex;
   justify-content: space-around;
@@ -21,6 +22,12 @@ body {
   overflow: hidden;
   position: relative;
   transition: 0.5s;
+}
+
+.container.night {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.342), rgba(0, 0, 0, 0.548)), url("../assets/desktop/bg-night.jpg") no-repeat;
+  background-position: bottom;
+  background-size: cover;
 }
 
 .quote {
@@ -39,6 +46,7 @@ body {
 .quote blockquote {
   font-size: 22px;
   font-weight: 300;
+  max-width: 650px;
 }
 
 .quote blockquote footer {
@@ -169,16 +177,14 @@ body {
 }
 
 .extra-data {
+  color: #fff;
   transition: 0.5s;
-  background-color: #b6b4b45b;
-  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.542);
   width: 100%;
-  height: 400px;
-  transform: translateY(6000px);
+  height: 0;
   padding: 3rem;
   padding-bottom: 0;
   backdrop-filter: blur(15px);
-  background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -188,7 +194,7 @@ body {
 
 .extra-data.active {
   opacity: 1;
-  transform: translateY(0px);
+  height: 400px;
 }
 
 .extra-data p {
@@ -214,5 +220,80 @@ body {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.loader-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(7, 7, 7, 0.308);
+  backdrop-filter: blur(20px);
+}
+
+.loader {
+  transform: rotate(45deg) translate(-10px, -50%);
+  width: 150px;
+  height: 150px;
+  border: 8px solid #000000bb;
+}
+
+.loader span {
+  width: 50px;
+  height: 50px;
+  background: #000000bb;
+  display: block;
+  float: left;
+  animation: animate 2s linear infinite;
+}
+
+.loader span:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.loader span:nth-child(2),
+.loader span:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.loader span:nth-child(1),
+.loader span:nth-child(5),
+.loader span:nth-child(9) {
+  animation-delay: 0.4s;
+}
+
+.loader span:nth-child(4),
+.loader span:nth-child(8) {
+  animation-delay: 0.2s;
+}
+
+.loader span:nth-child(7) {
+  animation-delay: 0s;
+}
+
+.loader span:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1);
   }
 }
