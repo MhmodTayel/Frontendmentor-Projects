@@ -237,7 +237,7 @@ body {
 }
 
 .loader {
-  transform: rotate(45deg) translate(-10px, -50%);
+  transform: rotate(45deg);
   width: 150px;
   height: 150px;
   border: 8px solid #000000bb;
