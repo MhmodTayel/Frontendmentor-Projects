@@ -29,7 +29,7 @@ function getQuote() {
     });
 }
 function getTime() {
-  fetch("http://worldtimeapi.org/api/ip")
+  fetch("https://worldtimeapi.org/api/ip")
     .then((response) => response.json())
     .then((data) => {
       showTime(data);
@@ -37,7 +37,7 @@ function getTime() {
 }
 let locationData = {};
 async function getLocation() {
-  const res = await fetch("http://freegeoip.app/json/");
+  const res = await fetch("https://freegeoip.app/json/");
   const output = await res.json();
   locationData = output;
 }
