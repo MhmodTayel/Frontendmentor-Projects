@@ -36,3 +36,41 @@ body {
 .header p {
   color: #858fad;
 }
+
+.card {
+  margin-top: 80px;
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .info h2 {
+  text-transform: uppercase;
+  color: #858fad;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+}
+
+.card .info h1 {
+  display: flex;
+  color: #293356;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.card .info h1 span {
+  color: #858fad;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: 8px;
+}
