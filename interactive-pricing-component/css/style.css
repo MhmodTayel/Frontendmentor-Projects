@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Manrope";
+}
+
+body {
+  background: url(../images/bg-pattern.svg) no-repeat;
+  background-size: cover;
+  background-position: top -100px left 0px;
+  background-color: #f9faff;
+}
