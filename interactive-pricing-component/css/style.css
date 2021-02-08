@@ -40,7 +40,7 @@ body {
 .card {
   margin-top: 80px;
   background-color: #fff;
-  padding: 40px 30px;
+  padding: 40px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -73,4 +73,39 @@ body {
   font-size: 18px;
   margin-top: 10px;
   margin-left: 8px;
+}
+
+.card .slide-bar {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.card .slide-bar .slider {
+  width: 100%;
+  -webkit-appearance: none;
+  background-color: #ebf2fc;
+  border-radius: 50px;
+  height: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+.card .slide-bar .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: url(../images/icon-slider.svg) no-repeat center center;
+  background-color: #10d5c2;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(16, 213, 194, 0.8);
+  transition: 0.5s;
+}
+
+.card .slide-bar .slider::-webkit-slider-thumb:hover {
+  background-color: #17b4a4;
+}
+
+.card .slide-bar .slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
 }

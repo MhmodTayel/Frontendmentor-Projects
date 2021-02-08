@@ -45,7 +45,7 @@ body {
 .card {
   margin-top: 80px;
   background-color: #fff;
-  padding: 40px 30px;
+  padding: 40px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -71,6 +71,36 @@ body {
         font-size: 18px;
         margin-top: 10px;
         margin-left: 8px;
+      }
+    }
+  }
+  .slide-bar {
+    width: 100%;
+    margin-top: 30px;
+    .slider {
+      width: 100%;
+      -webkit-appearance: none;
+      background-color: #ebf2fc;
+      border-radius: 50px;
+      height: 8px;
+      outline: none;
+      cursor: pointer;
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: url(../images/icon-slider.svg) no-repeat center center;
+        background-color: #10d5c2;
+        cursor: pointer;
+        box-shadow: 0 3px 10px rgba($color: #10d5c2, $alpha: 0.8);
+        transition: 0.5s;
+        &:hover {
+          background-color: #17b4a4;
+        }
+        &:active {
+          cursor: grabbing;
+        }
       }
     }
   }
