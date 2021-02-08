@@ -1,11 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
 
-$Slider-Bar : #a5f3eb;
-$Slide-Backround : #10d5c2;
-$Discount-Background : #feece7;
+$Slider-Bar: #a5f3eb;
+$Slide-Backround: #10d5c2;
+$Discount-Background: #feece7;
 $Discount-Text: #ff8c66;
-$CTA-Text:#bdccff;
+$CTA-Text: #bdccff;
 $text: #858fad;
+$Dark-text: #293356;
 * {
   box-sizing: border-box;
   padding: 0;
@@ -17,4 +18,26 @@ body {
   background-size: cover;
   background-position: top -100px left 0px;
   background-color: #f9faff;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.header {
+  text-align: center;
+  background: url(../images/pattern-circles.svg) no-repeat center center;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h1 {
+    color: $Dark-text;
+  }
+  p {
+    color: $text;
+  }
 }

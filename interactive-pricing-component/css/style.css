@@ -12,3 +12,27 @@ body {
   background-position: top -100px left 0px;
   background-color: #f9faff;
 }
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.header {
+  text-align: center;
+  background: url(../images/pattern-circles.svg) no-repeat center center;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header h1 {
+  color: #293356;
+}
+
+.header p {
+  color: #858fad;
+}
