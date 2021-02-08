@@ -101,3 +101,34 @@ body {
     }
   }
 }
+
+.output {
+  margin-top: 20px;
+  box-shadow: 0 0 10px 0 rgba($color: #000000, $alpha: 0.2);
+  box-sizing: 10px;
+  .url-output {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 30px;
+    border-bottom: 2px solid #eee;
+    .out {
+      display: flex;
+      align-items: center;
+      span {
+        color: #3697d9;
+        font-size: 18px;
+      }
+      i {
+        font-size: 28px;
+        margin-left: 20px;
+        cursor: pointer;
+        transition: 0.2s;
+        &:hover {
+          color: #0056b3;
+        }
+      }
+    }
+  }
+}

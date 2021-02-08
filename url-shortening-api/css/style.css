@@ -103,3 +103,39 @@ body {
 .short-input .btn:hover {
   background: linear-gradient(to left, #266a97 0% 28%, #338dca 28% 100%);
 }
+
+.output {
+  margin-top: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: 10px;
+}
+
+.output .url-output {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 30px;
+  border-bottom: 2px solid #eee;
+}
+
+.output .url-output .out {
+  display: flex;
+  align-items: center;
+}
+
+.output .url-output .out span {
+  color: #3697d9;
+  font-size: 18px;
+}
+
+.output .url-output .out i {
+  font-size: 28px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.output .url-output .out i:hover {
+  color: #0056b3;
+}
