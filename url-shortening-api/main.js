@@ -2,7 +2,7 @@ const URLInput = document.getElementById("url-input");
 const shortenBtn = document.getElementById("shorten");
 const alert = document.getElementById("alert");
 const output = document.getElementById("output");
-
+const wrapper = document.getElementById("wrapper");
 async function getURL(URL) {
   const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${URL}`);
   const output = await res.json();
@@ -17,20 +17,32 @@ function shortenURL(e) {
   let regex = new RegExp(expression);
   let input = URLInput.value;
   if (input.match(regex)) {
+    shortenBtn.disabled = true;
+    shortenBtn.style.cursor = "not-allowed";
+    wrapper.classList.add("active");
     getURL(input);
   } else {
-    URLInput.classList.add("wrong");
-    alert.classList.add("active");
-    setTimeout(() => {
-      URLInput.classList.remove("wrong");
-      alert.classList.remove("active");
-      URLInput.value = "";
-    }, 3000);
+    wrapper.classList.remove("active");
+    shortenBtn.innerHTML = ' Shorten It! <i class="fas fa-link"></i>';
+    Swal.fire({
+      icon: "error",
+      title: "Enter a valid URL",
+    });
   }
   e.preventDefault();
 }
 
 function showURL(data) {
+  wrapper.classList.remove("active");
+
+  Swal.fire({
+    icon: "success",
+    title: "The URL has been shorten",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+  shortenBtn.disabled = false;
+  shortenBtn.style.cursor = "pointer";
   shortenBtn.innerHTML = ` Shorten It! <i class="fas fa-link"></i>`;
   URLInput.value = "";
   if (data.ok) {
