@@ -28,29 +28,16 @@
         </div>
       </div>
       <div class="short-input">
-        <input type="text" class="url-input" id="url-input" />
-        <button class="btn">Shorten It! <i class="fas fa-link"></i></button>
+        <div class="data">
+          <input type="text" class="url-input" id="url-input" />
+          <button id="shorten" class="btn">
+            Shorten It! <i class="fas fa-link"></i>
+          </button>
+        </div>
+
+        <span class="wrong" id="alert">* Enter a valid URL</span>
       </div>
-      <div class="output">
-        <div class="url-output">
-          <div class="in"><span>wwww.facebook.comm</span></div>
-          <div class="out">
-            <span>shrt.link/fV24S </span> <i class="far fa-clipboard"></i>
-          </div>
-        </div>
-        <div class="url-output">
-          <div class="in"><span>wwww.facebook.comm</span></div>
-          <div class="out">
-            <span>shrt.link/fV24S </span> <i class="far fa-clipboard"></i>
-          </div>
-        </div>
-        <div class="url-output">
-          <div class="in"><span>wwww.facebook.comm</span></div>
-          <div class="out">
-            <span>shrt.link/fV24S </span> <i class="far fa-clipboard"></i>
-          </div>
-        </div>
-      </div>
+      <div class="output" id="output"></div>
     </div>
 
     <script src="main.js"></script>

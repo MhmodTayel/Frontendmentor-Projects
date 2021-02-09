@@ -64,16 +64,21 @@ body {
 .short-input {
   margin-top: 50px;
   width: 100%;
-  height: 100px;
+  height: 120px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   padding: 35px;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.short-input .data {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.short-input .url-input {
+.short-input .data .url-input {
   width: 70%;
   padding: 6px 20px;
   border-radius: 2px;
@@ -82,7 +87,12 @@ body {
   font-size: 18px;
 }
 
-.short-input .btn {
+.short-input .data .url-input.wrong {
+  border-color: #c01111;
+  color: #c72020;
+}
+
+.short-input .data .btn {
   border: 0;
   font-size: 16px;
   padding: 10px 15px;
@@ -91,16 +101,16 @@ body {
   outline: none;
   cursor: pointer;
   border-radius: 2px;
-  margin-left: -10px;
+  margin-left: 10px;
   border-color: #338dca;
 }
 
-.short-input .btn i {
+.short-input .data .btn i {
   padding: 0 0 0 8px;
   height: 100%;
 }
 
-.short-input .btn:hover {
+.short-input .data .btn:hover {
   background: linear-gradient(to left, #266a97 0% 28%, #338dca 28% 100%);
 }
 
@@ -124,9 +134,13 @@ body {
   align-items: center;
 }
 
-.output .url-output .out span {
+.output .url-output .out input {
   color: #3697d9;
   font-size: 18px;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  text-align: end;
 }
 
 .output .url-output .out i {
@@ -138,4 +152,16 @@ body {
 
 .output .url-output .out i:hover {
   color: #0056b3;
+}
+
+#alert {
+  display: block;
+  color: red;
+  margin-top: 5px;
+  margin-left: 80px;
+  visibility: hidden;
+}
+
+#alert.active {
+  visibility: visible;
 }
