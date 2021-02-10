@@ -34,7 +34,8 @@ function shortenURL(e) {
 
 function showURL(data) {
   wrapper.classList.remove("active");
-
+  let { original_link, short_link } = data.result;
+  Store.AddURL({ original_link, short_link });
   Swal.fire({
     icon: "success",
     title: "The URL has been shorten",
@@ -49,9 +50,9 @@ function showURL(data) {
     output.innerHTML += `
     
     <div class="url-output">
-    <div class="in"><span>${data.result.original_link}</span></div>
+    <div class="in"><span>${original_link}</span></div>
     <div class="out">
-      <input class="shorten-url" value="${data.result.short_link}" readonly>  <i class="copy far fa-clipboard "></i>
+      <input class="shorten-url" value="${short_link}" readonly>  <i class="copy far fa-clipboard "></i>
     </div>
   </div>
     
@@ -67,3 +68,48 @@ function showURL(data) {
     });
   }
 }
+
+function initUI(URLsArr) {
+  URLsArr.forEach((URL) => {
+    console.log(URL);
+    output.innerHTML += `
+    
+    <div class="url-output">
+    <div class="in"><span>${URL.original_link}</span></div>
+    <div class="out">
+      <input class="shorten-url" value="${URL.short_link}" readonly>  <i class="copy far fa-clipboard "></i>
+    </div>
+  </div>
+    
+    `;
+  });
+
+  const copys = document.querySelectorAll(".copy");
+  copys.forEach((copy) => {
+    copy.addEventListener("click", (e) => {
+      let test = e.target.parentElement.children[0];
+      test.select();
+      document.execCommand("copy");
+    });
+  });
+}
+
+class Store {
+  static getURLs() {
+    let URLs;
+    if (localStorage.getItem("URLs") === null) {
+      URLs = [];
+    } else {
+      URLs = JSON.parse(localStorage.getItem("URLs"));
+    }
+
+    return URLs;
+  }
+
+  static AddURL(URL) {
+    const URLs = Store.getURLs();
+    URLs.push(URL);
+    localStorage.setItem("URLs", JSON.stringify(URLs));
+  }
+}
+initUI(Store.getURLs());
