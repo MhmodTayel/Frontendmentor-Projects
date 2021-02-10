@@ -515,3 +515,9 @@ $box-wrapper-margin: calc((100% - #{$box-wrapper-height}) / 2)
     animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
   }
 }
+
+@media (max-width: 1050px) {
+  body {
+    display: none;
+  }
+}
