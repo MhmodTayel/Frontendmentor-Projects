@@ -132,8 +132,7 @@ body {
       margin-top: 50px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      justify-items: center;
-      align-items: center;
+      justify-items: start;
 
       .output-data-item {
         display: flex;
@@ -144,6 +143,7 @@ body {
           margin-right: 10px;
           font-size: 22px;
           color: $true-color;
+          margin-left: 50px;
         }
         p {
           font-size: 18px;

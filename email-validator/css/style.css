@@ -138,8 +138,7 @@ body {
   margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  align-items: center;
+  justify-items: start;
 }
 
 .container .output .output-data .output-data-item {
@@ -153,6 +152,7 @@ body {
   margin-right: 10px;
   font-size: 22px;
   color: #2ecc71;
+  margin-left: 50px;
 }
 
 .container .output .output-data .output-data-item p {
