@@ -51,4 +51,72 @@ body {
       color: $Grayish-Blue;
     }
   }
+
+  section {
+    max-width: 65%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    margin-top: 50px;
+    .card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 1px 5px 10px 0 rgba($color: #000000, $alpha: 0.1);
+      position: relative;
+      height: 200px;
+      h2 {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.1px;
+        line-height: 20px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 12px;
+        color: $Grayish-Blue;
+        margin-bottom: 30px;
+      }
+
+      img {
+        display: block;
+      }
+    }
+    .card-1 {
+      grid-area: 2 / 1 / 4 / 2;
+      background: url(../images/icon-supervisor.svg) no-repeat;
+      background-position: right 20px bottom 20px;
+      background-size: 15%;
+      background-color: #fff;
+      border-top: 4px solid $Cyan;
+    }
+    .card-2 {
+      grid-area: 1 / 2 / 3 / 3;
+      background: url(../images/icon-team-builder.svg) no-repeat;
+      background-position: right 20px bottom 20px;
+      background-size: 15%;
+      background-color: #fff;
+      border-top: 4px solid $Red;
+    }
+    .card-3 {
+      grid-area: 3 / 2 / 5 / 3;
+      background: url(../images/icon-karma.svg) no-repeat;
+      background-position: right 20px bottom 20px;
+      background-size: 15%;
+      background-color: #fff;
+      border-top: 4px solid $Orange;
+    }
+    .card-4 {
+      grid-area: 2 / 3 / 4 / 4;
+
+      background: url(../images/icon-calculator.svg) no-repeat;
+      background-position: right 20px bottom 20px;
+      background-size: 15%;
+      background-color: #fff;
+      border-top: 4px solid $Blue;
+    }
+  }
 }
