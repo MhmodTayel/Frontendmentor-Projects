@@ -71,7 +71,6 @@ function showURL(data) {
 
 function initUI(URLsArr) {
   URLsArr.forEach((URL) => {
-    console.log(URL);
     output.innerHTML += `
     
     <div class="url-output">
@@ -113,3 +112,4 @@ class Store {
   }
 }
 initUI(Store.getURLs());
+
