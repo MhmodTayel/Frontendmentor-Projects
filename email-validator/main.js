@@ -2,6 +2,7 @@ const input = document.getElementById("input");
 const inputBtn = document.getElementById("input-btn");
 const outputData = document.getElementById("output-data");
 const outputInfo = document.getElementById("output-info");
+const loading = document.getElementById("loading");
 inputBtn.addEventListener("click", () => {
   let email = input.value;
   if (!email) {
@@ -10,6 +11,7 @@ inputBtn.addEventListener("click", () => {
       title: "Please, Enter an Email..",
     });
   } else {
+    loading.classList.add("active");
     getData(email);
   }
 });
@@ -22,36 +24,48 @@ async function getData(email) {
 }
 
 function showOutput(data) {
-  outputData.innerHTML = "";
-  input.value = "";
-  Object.keys(data)
-    .filter((key) => key.includes("is"))
-    .forEach((item) => {
-      outputData.innerHTML += `
+  loading.classList.remove("active");
+  setTimeout(() => {
+    outputData.innerHTML = "";
+    outputInfo.innerHTML = "";
+    input.value = "";
+    Swal.fire({
+      icon: "success",
+      title: "Email has been checked",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }, 200);
+  setTimeout(() => {
+    Object.keys(data)
+      .filter((key) => key.includes("is"))
+      .forEach((item) => {
+        outputData.innerHTML += `
     <div class="output-data-item">
     <i class="fas fa-${
       data[item] == "True" ? "check" : "times"
     }-circle" style="color:${
-        data[item] == "True" ? "#2ecc71" : "#e74c3c"
-      } "></i>
+          data[item] == "True" ? "#2ecc71" : "#e74c3c"
+        } "></i>
     <p>${changeName(item.replace(/is_+|[_]+/g, ""))}</p>
   </div>
     
     `;
-    });
+      });
 
-  outputInfo.innerHTML = `
+    outputInfo.innerHTML = `
       
     <i class="far fa-${
       data["is_verified"] == "True" ? "check" : "times"
     }-circle" style="color:${
-    data["is_verified"] == "True" ? "#2ecc71" : "#e74c3c"
-  } "></i>
+      data["is_verified"] == "True" ? "#2ecc71" : "#e74c3c"
+    } "></i>
     <h2>This email address is <span class="state" style="color:${
       data["is_verified"] == "True" ? "#2ecc71" : "#e74c3c"
     } ">${data["is_verified"] == "True" ? "VALID" : "INVALID"}</span></h2>
     
     `;
+  }, 1000);
 }
 
 function changeName(item) {
